@@ -1,0 +1,31 @@
+{
+  "cars": [
+    {
+      "make": "Nissan",
+      "model": "Rogue",
+      "year": "2006",
+      "price": "8999",
+      "color": "Red",
+      "purchased": false,
+      "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
+    },
+    {
+      "make": "Toyota",
+      "model": "Camry",
+      "year": "2007",
+      "price": "13999",
+      "color": "Gold",
+      "purchased": false,
+      "description": "A little old lady owned this car and she only used it on Sundays to drive to and from church. So while it may be almost ten years old, it's got the mileage of a much younger car - 35000."
+    },
+    {
+      "make": "Buick",
+      "model": "Century",
+      "year": "1999",
+      "price": "1000",
+      "color": "Pink",
+      "purchased": false,
+      "description": "Don't be fooled by the color or brand of this car, it's secretly a beast! Come down and find out what Buick can do for you!!!"
+    }
+  ]
+}
