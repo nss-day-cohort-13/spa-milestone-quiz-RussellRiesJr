@@ -1,4 +1,4 @@
-var CarLot = (function(CarLot) {
+var CarLot = (function(aug) {
 
 
 
@@ -8,5 +8,5 @@ var CarLot = (function(CarLot) {
 
 
 
-  return CarLot;
+  return aug;
 })( CarLot || {});
