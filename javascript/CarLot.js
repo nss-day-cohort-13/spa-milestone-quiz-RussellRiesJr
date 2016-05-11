@@ -3,6 +3,7 @@ var CarLot = (function (aug) {
 
   var inventoryLoader = new XMLHttpRequest();
 
+// function to add IDs to the JSON items
   aug.CarObj = function(item, id) {
     this.item = item;
     this.id = id;
@@ -12,6 +13,7 @@ var CarLot = (function (aug) {
     return inventory;
   }
 
+// function to load JSON info
   aug.loadInventory = function (callback) {
     var carInfo = JSON.parse(inventoryLoader.responseText);
     for (var i = 0; i < carInfo.cars.length; i++) {
