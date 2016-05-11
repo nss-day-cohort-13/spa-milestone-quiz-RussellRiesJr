@@ -15,23 +15,28 @@ var CarLot = (function(aug) {
         var cardChange = event.target.parentNode;
         var textPull = event.target.parentNode.childNodes[4];
         console.log("tag", textPull);
+        console.log("ID", cardChange.id);
         cardChange.classList.toggle("newer-card");
         cardChange.setAttribute("style", "border: 6px solid green;");
         // putting cursor in the input field
         inputField.focus();
-        inputField.addEventListener("keyup", function() {
-          textPull.innerHTML = inputField.value;
-          document.addEventListener("keyup", function(e) {
-            var userInput = document.getElementById("userInput");
-            if (e.keyCode === 13) {
-              for (var i = 0; i < cardChange.children.length; i++) {
-                cardChange.children[4] = inputField.value;
-                inputField.value = "";
-              }
-            }
-          })
+        inputField.addEventListener("keyup", function(e) {
+          if (e.keyCode !== 13) {
+            textPull.innerHTML = inputField.value;
+          }
         })
       }
+      inputField.addEventListener("keyup", function(e) {
+        if (e.keyCode === 13) {
+          for (var i = 0; i < inventory.length; i++) {
+            if (inventory[i].id === cardChange.id) {
+              inventory[i].item.description = inputField.value;
+            }
+          }
+        CarLot.clearDOM(inventory);
+        }
+      })
+      console.log(inventory);
     });
   }
 

@@ -16,7 +16,6 @@ var CarLot = (function (aug) {
     var carInfo = JSON.parse(inventoryLoader.responseText);
     for (var i = 0; i < carInfo.cars.length; i++) {
       newCar = new CarLot.CarObj(carInfo.cars[i], `car${i}`);
-      console.log(newCar);
       inventory.push(newCar);
     }
     CarLot.populatePage(inventory);
