@@ -3,6 +3,10 @@ var CarLot = (function (aug) {
 
   var inventoryLoader = new XMLHttpRequest();
 
+  aug.CarObj = function(item, id) {
+    this.item = item;
+    this.id = id;
+  }
 
   aug.getInventory = function () {
     return inventory;
@@ -10,9 +14,12 @@ var CarLot = (function (aug) {
 
   aug.loadInventory = function (callback) {
     var carInfo = JSON.parse(inventoryLoader.responseText);
-    CarLot.populatePage(carInfo.cars);
-    inventory = carInfo.cars;
-    console.log(inventory);
+    for (var i = 0; i < carInfo.cars.length; i++) {
+      newCar = new CarLot.CarObj(carInfo.cars[i], `car${i}`);
+      console.log(newCar);
+      inventory.push(newCar);
+    }
+    CarLot.populatePage(inventory);
   }
 
   inventoryLoader.addEventListener("load", aug.loadInventory);

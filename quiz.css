@@ -18,3 +18,8 @@
 .about {
   text-align: justify;
 }
+
+.newer-card {
+  border: 6px solid green;
+  background-color: orange;
+}
